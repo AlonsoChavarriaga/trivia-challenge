@@ -4,8 +4,8 @@ import {
   Route,
 } from 'react-router-dom'
 import {Home} from './views/home';
-import {Results} from './views/results';
 import QuizProvider from './providers/quiz-provider';
+import ResultsProvider from './providers/results-provider';
 // import './App.css';
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
           />
           <Route
             path="/results"
-            component={Results}
+            component={ResultsProvider}
             exact={true}
           />
           <Route

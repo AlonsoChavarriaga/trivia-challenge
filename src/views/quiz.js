@@ -4,10 +4,6 @@ import { Redirect } from 'react-router-dom';
 import {TriviaPanel} from './trivia-panel';
 
 class Quiz extends Component {
-  sendToResults = () => {
-    window.location = '/results';
-  }
-
   render() {
     const { currentStep, questions } = this.props;
     const { questionsList } = questions;
