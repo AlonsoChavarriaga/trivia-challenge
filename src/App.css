@@ -138,6 +138,8 @@ body {
     @media (min-width: 1024px) {
       .results-screen .results-card {
         margin: 0 auto; } }
+  .results-screen .answer {
+    font-weight: bold; }
   .results-screen .answer-correct, .results-screen .answer-wrong {
     padding: 6px 16px;
     font-size: 1.2em;
