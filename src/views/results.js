@@ -12,29 +12,43 @@ class Results extends Component {
 
   render() {
     const { currentStep, questionsList } = this.props;
-    console.log('currentstep', currentStep);
 
     if(!currentStep) {
       return <Redirect exact={true} to={{ pathname: '/' }} />
     }
 
     return (
-      <div className="results-screen">
-        <h1 className="splash-title">
-          Results Screen
+      <div className="container results-screen">
+        <h1 className="results-title">
+          You Scored: <br/> { `${this.calculateScore(questionsList)} / 10` }
         </h1>
-        { `${this.calculateScore(questionsList)} / 10` }
 
-        {questionsList.length && questionsList.map((question) => {
-          return (
-            <div key={question.question} className={question.correct_answer === question.answered ? 'answer-correct' : 'answer-wrong'}>
-
-              <span dangerouslySetInnerHTML={{__html: question.question}} />
-            </div>
-          )
-        })}
-    
-        <button onClick={this.props.onPlayAgain}>Play Again?</button>
+        <div className="results-card">
+          {questionsList.length && questionsList.map((question) => {
+            return (
+              <div 
+                key={question.question} 
+                className={question.correct_answer === question.answered 
+                ? 'answer-correct' 
+                : 'answer-wrong'}
+              >
+                { question.correct_answer === question.answered 
+                  ? (<i className="fas fa-times fa-fw" />)
+                  : (<i className="fas fa-check fa-fw" />)
+                }
+                <span dangerouslySetInnerHTML={{__html: question.question}} />
+              </div>
+            )
+          })}
+        </div>
+        <div className="restart-quiz-wrapper">
+          <button 
+            className="button begin-quiz" 
+            onClick={this.props.onPlayAgain}
+          >
+            Play Again?
+          </button>
+        </div>
       </div>
     )
   }

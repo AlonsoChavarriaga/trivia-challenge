@@ -3,11 +3,25 @@ import React from 'react';
 
 const TriviaPanel = (props) => (
   <div className="trivia-panel">
-    <h1>{props.category}</h1>
-    <h3 dangerouslySetInnerHTML={{__html: props.question}} />
-    <h5>{props.currentStep + 1} of {props.totalSteps}</h5>
-    <button onClick={() => props.onAnswerSelect("True")}>True</button>
-    <button onClick={() => props.onAnswerSelect("False")}>False</button>
+    <h1 className="question-category">{props.category}</h1>
+    <div className="question-card">
+      <span className="question-text" dangerouslySetInnerHTML={{__html: props.question}} />
+    </div>
+    <span className="question-count">
+      Question <b>{props.currentStep + 1}</b> of <b>{props.totalSteps}</b>
+    </span>
+    <div className="buttons-wrapper">
+      <button 
+        className="button button-true" 
+        onClick={() => props.onAnswerSelect("True")}>
+        True
+      </button>
+      <button 
+        className="button button-false" 
+        onClick={() => props.onAnswerSelect("False")}>
+        False
+      </button>
+    </div>
   </div>
 );
 

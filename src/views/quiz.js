@@ -13,7 +13,7 @@ class Quiz extends Component {
     }
 
     return (
-      <div className="quiz-screen">
+      <div className="container quiz-screen">
         <TriviaPanel
           currentStep={currentStep}
           totalSteps={10}
