@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "styles": "node-sass-chokidar sass/app.sass -o src/",
     "styles:watch": "node-sass-chokidar sass/app.sass -o src/ --watch --recursive",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
